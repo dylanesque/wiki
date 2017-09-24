@@ -17,3 +17,7 @@ h1 {
 	margin-top: 7%;
 }
 
+li {
+	list-style-type: none;
+}
+
