@@ -8,17 +8,15 @@ $(document).ready(function(){
 			url: searchUrl, 
 			async: false, 
 			dataType: "json", 
-			success: function(data){
-				for(var i = 0; i < data[1].length; i++) {
-					$('#searchResults').prepend("<li><a href=" + data[3][0] + ">" 
-					+ data[1][0] + "</a><p>" + data[2][0]  + "</p></li>");
+			success: function(data) {
+				$('#search').html('');
+				for (var i = 0; i < data[1].length; i++) {
+					$('#searchResults').append("<li><a href=" + data[3][i] + ">" + data[1][i] +   "</a><h4>" + data[2][i] + "</h4></li>");
 				}
-			
 			}, 
-			error: function(error){
+			error: function(error) {
 				alert("Error!");
 			}
-		
 		});
 	})
 });
